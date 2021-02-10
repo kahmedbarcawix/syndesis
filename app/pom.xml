@@ -41,7 +41,7 @@
     <assembly.skip>false</assembly.skip>
 
     <!-- Atlasmap version -->
-    <atlasmap.version>2.1.3</atlasmap.version>
+    <atlasmap.version>2.1.4</atlasmap.version>
 
     <!-- Image namespace - can be overridden on cli -->
     <image.namespace>syndesis</image.namespace>
@@ -144,7 +144,8 @@
     <junit.version>4.13.1</junit.version>
     <junit5.version>5.6.2</junit5.version>
     <powermock.version>2.0.7</powermock.version>
-    <testcontainers.version>1.14.3</testcontainers.version>
+    <testcontainers.version>1.15.1</testcontainers.version>
+    <docker-java.version>3.2.7</docker-java.version>
     <citrus.version>3.0.0-M1</citrus.version>
     <mockito.version>3.3.3</mockito.version>
 
@@ -611,22 +612,22 @@
               <compilerArgs>
                 <arg>-XDcompilePolicy=simple</arg>
                 <arg>-Xplugin:ErrorProne -XepDisableWarningsInGeneratedCode
-		-XepExcludedPaths:.*/generated-sources/.*
-		-Xep:ConstantField:WARN
-		-Xep:FieldCanBeFinal:WARN
-		-Xep:LambdaFunctionalInterface:WARN
-		-Xep:MethodCanBeStatic:WARN
-		-XepOpt:MethodCanBeStatic:FindingPerSite
-		-Xep:PackageLocation:WARN
-		-Xep:PrivateConstructorForUtilityClass:WARN
-		-Xep:RemoveUnusedImports:WARN
-		-Xep:SwitchDefault:WARN
-		-Xep:TestExceptionChecker:WARN
-		-Xep:ThrowsUncheckedException:WARN
-		-Xep:TryFailRefactoring:WARN
-		-Xep:UnnecessaryStaticImport:WARN
-		-Xep:WildcardImport:WARN
-		-Xep:MissingSummary:OFF</arg>
+                  -XepExcludedPaths:.*/generated-sources/.*
+                  -Xep:ConstantField:WARN
+                  -Xep:FieldCanBeFinal:WARN
+                  -Xep:LambdaFunctionalInterface:WARN
+                  -Xep:MethodCanBeStatic:WARN
+                  -XepOpt:MethodCanBeStatic:FindingPerSite
+                  -Xep:PackageLocation:WARN
+                  -Xep:PrivateConstructorForUtilityClass:WARN
+                  -Xep:RemoveUnusedImports:WARN
+                  -Xep:SwitchDefault:WARN
+                  -Xep:TestExceptionChecker:WARN
+                  -Xep:ThrowsUncheckedException:WARN
+                  -Xep:TryFailRefactoring:WARN
+                  -Xep:UnnecessaryStaticImport:WARN
+                  -Xep:WildcardImport:WARN
+                  -Xep:MissingSummary:OFF</arg>
                 <arg>${errorprone.autofix.arg1}</arg>
                 <arg>${errorprone.autofix.arg2}</arg>
                 <arg>-Xlint:all</arg>
@@ -3403,6 +3404,12 @@
         <groupId>org.testcontainers</groupId>
         <artifactId>mariadb</artifactId>
         <version>${testcontainers.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.github.docker-java</groupId>
+        <artifactId>docker-java-api</artifactId>
+        <version>${docker-java.version}</version>
       </dependency>
 
       <!-- Citrus -->
